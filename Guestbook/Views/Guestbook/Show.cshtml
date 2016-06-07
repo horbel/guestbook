@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Show</title>
+</head>
+<body>
+    @{bool hasPermission = (bool)ViewData["hasPermission"]; }
+    <p>
+        @if (hasPermission)
+        {
+            @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+        }
+        @Html.ActionLink("Back to Entries", "Index")
+    </p>
+</body>
+</html>

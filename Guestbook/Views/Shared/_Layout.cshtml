@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>    
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet"  type="text/css" href="~/Content/Site.css"/>
+</head>
+<body>
+    <header>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p class="site-title">
+                    @Html.ActionLink("My Guest Book",
+"Index", "Home")
+                </p>                
+            </div>
+            <div class="float-right">
+                @*<section id="login">
+                    Hello, <span class="username">@Html.Partial("_LogOnPartial")</span>!
+                </section>*@
+                <nav>
+                    <ul id="menu">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>
+                            @Html.ActionLink("View Entries", "Index",
+"Guestbook")
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+       
+    </footer>
+</body>
+</html>
